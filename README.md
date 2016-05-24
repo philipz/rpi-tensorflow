@@ -1,5 +1,5 @@
 #Tensorflow on Raspberry Pi 2
-[![Docker Pulls](https://img.shields.io/docker/pulls/mashape/kong.svg?maxAge=2592000)](https://hub.docker.com/r/philipz/rpi-tensorflow/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/philipz/rpi-tensorflow.svg?maxAge=2592000)](https://hub.docker.com/r/philipz/rpi-tensorflow/)
 
 ##Reference
 1. [TensorFlow Offical Dockerfile](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/Dockerfile)
