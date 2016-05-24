@@ -4,7 +4,7 @@ MAINTAINER Philpz <philipzheng@gmail.com>
 ENV QEMU_EXECVE 1
 COPY qemu/cross-build-end qemu/cross-build-start qemu/qemu-arm-static qemu/sh-shim /usr/bin/
 RUN [ "cross-build-start" ]
-RUN apt-get update && apt-get -y install ca-certificates build-essential python-dev
+RUN apt-get update && apt-get -y upgrade && apt-get -y install ca-certificates build-essential python-dev
 # Pick up some TF dependencies
 RUN apt-get install -y \
         curl \
