@@ -7,4 +7,9 @@
 3. [Building ARM containers on any x86 machine, even  DockerHub](https://resin.io/blog/building-arm-containers-on-any-x86-machine-even-dockerhub/)
 
 ## Use
-Just on RPi 2 install Docker, and docker pull philipz/rpi-tensorflow
+Just on RPi 2 install Docker, and docker pull philipz/rpi-tensorflow. And......
+
+`docker run -d -p 8888:8888 philipz/rpi-tensorflow`
+
+Open browser, http://localhost:8888/
+
