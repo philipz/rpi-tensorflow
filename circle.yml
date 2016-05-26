@@ -1,0 +1,21 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t philipz/rpi-tensorflow .
+
+test:
+  override:
+    - docker run -ti -v $(pwd)/test:/test philipz/rpi-tensorflow bash; sleep 3
+    - python /test/tensorflow-test1.py
+    - python /test/tensorflow-test2.py
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push philipz/rpi-tensorflow
