@@ -6,7 +6,7 @@ COPY qemu/cross-build-end qemu/cross-build-start qemu/qemu-arm-static qemu/sh-sh
 RUN [ "cross-build-start" ]
 ENV LC_ALL=C.UTF-8
 RUN apt-get update -y && apt-get install -y python-pip python-dev wget vim gcc g++ gfortran libatlas-base-dev cython \
-	libfreetype6-dev libpng12-dev pkg-config
+	libfreetype6-dev libpng12-dev pkg-config python-scipy
 RUN wget --no-check-certificate https://github.com/samjabrahams/tensorflow-on-raspberry-pi/raw/master/bin/tensorflow-0.8.0-cp27-none-linux_armv7l.whl && pip install tensorflow-0.8.0-cp27-none-linux_armv7l.whl && rm tensorflow-0.8.0-cp27-none-linux_armv7l.whl
 RUN apt-get remove python-pip && apt-get autoremove
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
