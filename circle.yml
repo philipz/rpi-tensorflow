@@ -4,8 +4,6 @@ machine:
 
 dependencies:
   override:
-    - bundle install:
-        timeout: 8800
     - docker info
     - docker build -t philipz/rpi-tensorflow .
 
