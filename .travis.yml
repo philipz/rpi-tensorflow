@@ -3,13 +3,15 @@ sudo: required
 services:
   - docker
 
-before_install:
+install:
   - sudo apt-get update
   - sudo apt-get -y install qemu-user-static
   - docker build -t philipz/rpi-tensorflow .
+
+script:
   - docker run -ti -v $(pwd)/qemu/qemu-arm-static:/usr/bin/qemu-arm-static -v $(pwd)/test:/test philipz/rpi-tensorflow /bin/bash -c "python /test/tensorflow-test1.py"
   - docker run -ti -v $(pwd)/qemu/qemu-arm-static:/usr/bin/qemu-arm-static -v $(pwd)/test:/test philipz/rpi-tensorflow /bin/bash -c "python /test/tensorflow-test2.py"
 
-script:
+after_success:
   - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
   - docker push philipz/rpi-tensorflow
