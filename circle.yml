@@ -9,9 +9,8 @@ dependencies:
 
 test:
   override:
-    - docker run -ti -v $(pwd)/test:/test philipz/rpi-tensorflow bash; sleep 3
-    - python /test/tensorflow-test1.py
-    - python /test/tensorflow-test2.py
+    - docker run -ti -v $(pwd)/test:/test philipz/rpi-tensorflow bash; python /test/tensorflow-test1.py
+    - docker run -ti -v $(pwd)/test:/test philipz/rpi-tensorflow bash; python /test/tensorflow-test2.py
 
 deployment:
   hub:
